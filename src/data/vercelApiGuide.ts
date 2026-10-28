@@ -245,12 +245,12 @@ async function processarMercadoLivre(urlFinal) {
     const prev = firstPoly.find('.andes-money-amount--previous').first();
     const prevFrac = prev.find('.andes-money-amount__fraction').text().trim();
     const prevCents = prev.find('.andes-money-amount__cents').text().trim() || '00';
-    if (prevFrac) precoOriginal = `${prevFrac},${prevCents}`;
+    if (prevFrac) precoOriginal = \`\${prevFrac},\${prevCents}\`;
 
     const curr = firstPoly.find('.andes-money-amount:not(.andes-money-amount--previous)').first();
     const currFrac = curr.find('.andes-money-amount__fraction').text().trim();
     const currCents = curr.find('.andes-money-amount__cents').text().trim() || '00';
-    if (currFrac) precoVista = `${currFrac},${currCents}`;
+    if (currFrac) precoVista = \`\${currFrac},\${currCents}\`;
 
     const polyInstallment = firstPoly.find('.poly-price__installments, .poly-component__installments').first().text().trim();
     if (polyInstallment) parcelamento = polyInstallment;

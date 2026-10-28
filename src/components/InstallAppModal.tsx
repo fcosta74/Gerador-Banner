@@ -140,6 +140,58 @@ export const InstallAppModal: React.FC<InstallAppModalProps> = ({ isOpen, onClos
                 )}
               </div>
 
+              {/* Link Direto do Aplicativo para Instalação */}
+              <div className="bg-slate-900 text-white rounded-2xl p-4 border border-slate-800 space-y-2.5">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-bold text-orange-400 flex items-center gap-1.5 uppercase tracking-wider">
+                    <ExternalLink className="w-3.5 h-3.5" /> Link do seu App para Instalar no Celular e PC:
+                  </span>
+                  <span className="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-full">
+                    Acesso Universal
+                  </span>
+                </div>
+
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
+                  <div className="flex-1 bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 font-mono text-xs text-slate-200 select-all overflow-x-auto truncate">
+                    {typeof window !== 'undefined'
+                      ? window.location.origin.includes('localhost')
+                        ? 'https://ais-pre-fmj6io7eyargjpgn4zeufy-26078832980.us-east5.run.app'
+                        : window.location.href
+                      : 'https://ais-pre-fmj6io7eyargjpgn4zeufy-26078832980.us-east5.run.app'}
+                  </div>
+
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const link =
+                        typeof window !== 'undefined'
+                          ? window.location.origin.includes('localhost')
+                            ? 'https://ais-pre-fmj6io7eyargjpgn4zeufy-26078832980.us-east5.run.app'
+                            : window.location.href
+                          : 'https://ais-pre-fmj6io7eyargjpgn4zeufy-26078832980.us-east5.run.app';
+                      navigator.clipboard.writeText(link);
+                      setCopiouLink(true);
+                      setTimeout(() => setCopiouLink(false), 2500);
+                    }}
+                    className="py-2.5 px-4 bg-orange-500 hover:bg-orange-600 active:scale-95 text-white font-bold text-xs rounded-xl flex items-center justify-center gap-1.5 transition shrink-0 cursor-pointer shadow"
+                  >
+                    {copiouLink ? (
+                      <>
+                        <CheckCircle className="w-4 h-4 text-white" /> Link Copiado!
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="w-4 h-4" /> Copiar Link
+                      </>
+                    )}
+                  </button>
+                </div>
+
+                <p className="text-[11px] text-slate-400">
+                  📲 <strong>Como instalar no celular:</strong> Copie o link acima, envie no seu WhatsApp e abra no <strong>Google Chrome</strong> do celular. Toque nos 3 pontinhos e selecione <strong>"Instalar aplicativo"</strong>!
+                </p>
+              </div>
+
               {/* Grid Windows vs Android */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* No Windows */}
