@@ -1,0 +1,237 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+html, body {
+  max-width: 100%;
+  overflow-x: hidden; /* Trava o movimento lateral indesejado */
+}
+
+.form-container, .preview-container, .form-control, .row {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+body {
+  background-color: #f3f4f6;
+  padding: 20px;
+  color: #333;
+}
+
+.main-container {
+  display: flex;
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.form-container {
+  flex: 1;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-weight: 800;
+  color: #111;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.input-with-button {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-buscar {
+  background-color: #ffe500;
+  border: none;
+  padding: 0 10px;
+  font-size: 14px;
+  font-weight: bolder;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-limpar {
+  background-color: #ffe500;
+  border: none;
+  padding: 0 10px;
+  font-size: 14px;
+  font-weight: bolder;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-buscar:hover {
+  background-color: #e6ce00;
+}
+.btn-limpar {
+  background-color: #e6ce00;
+}
+.divider {
+  margin: 20px 0;
+  border: none;
+  border-top: 1px solid #e5e7eb;
+}
+
+.form-control-file {
+  font-size: 14px;
+}
+
+.btn-download {
+  width: 100%;
+  background-color: #10b981;
+  color: white;
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 800;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background 0.2s;
+}
+
+.btn-download:hover {
+  background-color: #059669;
+}
+
+.preview-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: #e5e7eb;
+  border-radius: 12px;
+  min-height: 600px;
+  
+}
+/* Limita o tamanho do Canvas na tela sem perder a qualidade final de 1080px */
+#bannerCanvas {   
+  max-width: 450px; /* Ou o tamanho que preferir para a preview */
+  width: 100% !important;
+  height: auto ! important;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  display: block;
+  margin: 0 auto;
+}
+/* Configura a linha para colocar os elementos lado a lado */
+.row {
+  display: flex;
+  gap: 15px; /* Espaço entre os campos */
+  width: 100%;
+}
+
+/* Faz cada campo dentro da row ocupar a mesma largura */
+.row .form-group {
+  flex: 1;
+}
+@media (max-width: 700px) {
+  body {
+    padding: 10px; /* Reduz a borda lateral da tela do celular */
+  }
+
+  .main-container {
+    flex-direction: column;
+    gap: 15px; /* Reduz o espaço entre o formulário e o preview */
+  }
+
+  .form-container {
+    padding: 15px; /* Deixa o formulário mais compacto no mobile */
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .preview-container {
+    min-height: auto; /* Remove a altura mínima exagerada no celular */
+    padding: 10px;
+  }
+
+  #bannerCanvas {
+    max-width: 100%; /* Faz o canvas ocupar toda a largura disponível da tela */
+    height: auto;
+  }
+
+  .input-with-button {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .btn-buscar .btn-limpar{
+    width: 100%;
+    padding: 12px;
+  }
+
+}
+/* Estilo específico para a logo dentro do banner */
+.banner-container {
+    display: flex;
+    align-items: center; /* Alinha a logo e o texto/conteúdo verticalmente ao centro */
+    padding: 8px 15px;
+    background-color: #2e7d32; /* Cor de fundo do seu banner */
+    height: 60px; /* Altura fixa para o banner */
+}
+
+.logo-banner {
+    width: 45px; /* Define o tamanho reduzido da logo */
+    height: 45px; /* Mantém proporção quadrada/circular */
+    object-fit: contain; /* Garante que a imagem não distorça */
+    border-radius: 50%; /* Se quiser manter em formato circular */
+    margin-right: 12px; /* Espaço entre a logo e o texto ao lado */
+}
+/* Container do topo do card/banner */
+.banner-header {
+    display: flex;
+    justify-content: space-between; /* Mercado Livre na esquerda, FCS na direita */
+    align-items: center;
+    width: 100%;
+    padding: 1px 1px;
+    box-sizing: border-box;
+}
+
+/* Tamanho controlado das duas logos */
+.logo-ml {
+    max-width: 110px; /* Limita a largura do Mercado Livre */
+    height: auto;
+}
+
+.logo-fcs {
+    max-width: 60px;  /* Reduz o tamanho da sua logo para caber na direita */
+    height: auto;
+}
+
+/* Reduz o tamanho geral do card para caber na tela */
+.card-banner {
+    max-width: 320px; /* Largura ideal para banners de rede social/feed */
+    padding: 10px;
+    border-radius: 12px;
+}

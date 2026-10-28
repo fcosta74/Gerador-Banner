@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="50%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <linearGradient id="flameGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF7A00" />
+      <stop offset="50%" stop-color="#EE4D2D" />
+      <stop offset="100%" stop-color="#E11D48" />
+    </linearGradient>
+    <linearGradient id="fcsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#0284C7" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#EE4D2D" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <!-- Background Rounded Squircle -->
+  <rect x="16" y="16" width="480" height="480" rx="108" fill="url(#bgGrad)" stroke="#334155" stroke-width="6" />
+
+  <!-- Outer Accent Ring -->
+  <circle cx="256" cy="220" r="140" fill="none" stroke="url(#flameGrad)" stroke-width="4" stroke-opacity="0.3" />
+
+  <!-- Center Stylized Flame / Banner Icon -->
+  <g filter="url(#glow)">
+    <path d="M 256 100 C 270 150, 340 180, 340 250 C 340 310, 298 340, 256 340 C 214 340, 172 310, 172 250 C 172 195, 220 160, 236 125 C 242 160, 266 185, 276 210 C 285 230, 280 255, 260 270 C 255 240, 240 220, 232 205 C 220 230, 225 260, 240 280 C 220 275, 204 250, 204 230 C 204 180, 245 135, 256 100 Z" fill="url(#flameGrad)" />
+  </g>
+
+  <!-- FCS Text Badge -->
+  <rect x="120" y="370" width="272" height="64" rx="20" fill="#1E293B" stroke="#38BDF8" stroke-width="3" />
+  <text x="256" y="415" font-family="'Montserrat', 'Arial Black', sans-serif" font-weight="900" font-size="34" fill="#38BDF8" text-anchor="middle" letter-spacing="3">FCS BANNER</text>
+</svg>

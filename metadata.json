@@ -1,0 +1,6 @@
+{
+  "name": "Gerador de Banners Promocionais - Shopee, Mercado Livre & KaBuM!",
+  "description": "Gerador automático de banners promocionais e legendas para Shopee, Mercado Livre e KaBuM com extração de preços, imagens, avaliações e contagem de opiniões.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
